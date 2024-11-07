@@ -7,6 +7,18 @@ export const routes: Routes = [
     component: TripsComponent,
   },
   {
+    path: 'new',
+    redirectTo: '',
+  },
+  {
+    path: 'edit/:id',
+    redirectTo: '',
+  },
+  {
+    path: 'info/:id',
+    redirectTo: '',
+  },
+  {
     path: '**',
     redirectTo: '',
   },
