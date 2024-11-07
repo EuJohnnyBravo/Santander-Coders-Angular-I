@@ -1,11 +1,1 @@
-.table-container {
-  max-height: 70vh; /* Defina a altura máxima desejada */
-  overflow-y: auto;
-}
 
-thead th {
-  position: sticky;
-  top: 0;
-  background-color: inherit; /* Mantém a cor de fundo do cabeçalho */
-  z-index: 1; /* Garante que o cabeçalho fique acima das linhas da tabela */
-}

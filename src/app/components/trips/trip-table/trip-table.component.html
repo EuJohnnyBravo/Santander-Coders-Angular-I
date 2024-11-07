@@ -1,11 +1,11 @@
-<div class="table-container scroll">
-  <table class="min-w-full divide-y divide-zinc-950 h-[45%] overflow-x-auto">
+<div class="max-h-[70vh] overflow-y-auto scroll">
+  <table class="min-w-full divide-y divide-zinc-950 h-[45%]">
     <thead class="bg-zinc-950 sticky top-0 z-10">
       <tr>
         <th
           *ngFor="let title of table"
           scope="col"
-          class="px-6 py-3 font-roboto text-xs text-center font-medium text-zinc-50 uppercase tracking-wider"
+          class="sticky top-0 bg-inherit z-10 px-6 py-3 font-roboto text-xs text-center font-medium text-zinc-50 uppercase tracking-wider"
         >
           {{ title }}
         </th>
