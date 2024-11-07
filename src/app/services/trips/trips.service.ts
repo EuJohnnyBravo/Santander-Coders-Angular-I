@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Viagem } from '../../interfaces/trips';
+import { Participante, Viagem } from '../../interfaces/trips';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -189,9 +189,26 @@ export class TripsService {
     ),
   ];
 
+  participantsData: Participante[] = [
+    new Participante('Kauan Herbst', 'kauan@gmail.com'),
+    new Participante('Herbst Kauan', 'herbst@gmail.com'),
+    new Participante('Kauan Herbst', 'kauan@gmail.com'),
+    new Participante('Herbst Kauan', 'herbst@gmail.com'),
+    new Participante('Kauan Herbst', 'kauan@gmail.com'),
+    new Participante('Herbst Kauan', 'herbst@gmail.com'),
+    new Participante('Kauan Herbst', 'kauan@gmail.com'),
+    new Participante('Herbst Kauan', 'herbst@gmail.com'),
+    new Participante('Kauan Herbst', 'kauan@gmail.com'),
+    new Participante('Herbst Kauan', 'herbst@gmail.com')
+  ];
+
   constructor() {}
 
   getTrips(): Observable<Viagem[]> {
     return of(this.tripsData);
+  }
+
+  getParticipants(): Observable<Participante[]> {
+    return of(this.participantsData);
   }
 }
