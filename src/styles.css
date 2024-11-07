@@ -3,3 +3,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-table {
+  @apply text-center font-light text-sm font-roboto;
+}
+
+.header-table {
+  @apply border-y-[1px] border-zinc-800 px-4 py-2;
+}
+
+.em-andameno {
+  @apply bg-inherit;
+}
+
+.scroll {
+  @apply [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:rounded-full
+  [&::-webkit-scrollbar-thumb]:rounded-full
+  [&::-webkit-scrollbar-track]:bg-zinc-900
+  [&::-webkit-scrollbar-thumb]:bg-zinc-900
+  dark:[&::-webkit-scrollbar-track]:bg-zinc-900
+  dark:[&::-webkit-scrollbar-thumb]:bg-gradient-to-b from-zinc-500 to-zinc-900;
+}
