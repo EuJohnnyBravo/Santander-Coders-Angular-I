@@ -25,8 +25,8 @@ export class TripsService {
 
   constructor() {}
 
-  getTrips(): Observable<Viagem[]> {
-    return of(this.tripsData);
+  getTrips(): Viagem[] {
+    return this.tripsData;
   }
 
   getParticipants(): Observable<Participante[]> {
@@ -41,7 +41,16 @@ export class TripsService {
     this.localStorageS.setItem('trips', JSON.stringify(this.tripsData));
   }
 
-  getTripById(id: string){
+  getTripById(id: string) {
     return this.tripsData.find((travel) => travel.id === id);
+  }
+
+  searchTrips(searchValue: string): Viagem[] {
+    if (!searchValue) {
+      return this.tripsData;
+    }
+    return this.tripsData.filter((trip) => {
+      return trip.viagem.toLowerCase().includes(searchValue.toLowerCase());
+    });
   }
 }

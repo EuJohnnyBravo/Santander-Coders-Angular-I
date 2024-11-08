@@ -1,11 +1,14 @@
 <div>
-  <div class="flex flex-row items-center gap-5 h-24 my-6">
-    <h1 class="text-2xl font-roboto font-medium text-zinc-50">Viagens</h1>
-    <app-button
-      label="Adicionar nova Viagem"
-      src="../../../assets/plus.svg"
-      route="/new"
-    />
+  <div class="flex flex-row items-center justify-between h-24 my-6">
+    <div class="flex flex-row items-center gap-5">
+      <h1 class="text-2xl font-roboto font-medium text-zinc-50">Viagens</h1>
+      <app-button
+        label="Adicionar nova Viagem"
+        src="../../../assets/plus.svg"
+        route="/new"
+      />
+    </div>
+    <app-search-bar (searchValue)="onSearchValueChange($event)" />
   </div>
   <div class="border-y-2 border-zinc-800">
     <app-trip-table [tripsData]="tripsData"></app-trip-table>
