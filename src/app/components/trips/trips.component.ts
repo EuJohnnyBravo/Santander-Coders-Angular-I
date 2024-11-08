@@ -5,11 +5,19 @@ import { Observable } from 'rxjs';
 import { Viagem } from '../../interfaces/trips';
 import { CommonModule } from '@angular/common';
 import { TripTableComponent } from './trip-table/trip-table.component';
+import { RouterLink } from '@angular/router';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-trips',
   standalone: true,
-  imports: [NgFor, CommonModule, TripTableComponent],
+  imports: [
+    RouterLink,
+    NgFor,
+    CommonModule,
+    TripTableComponent,
+    ButtonComponent,
+  ],
   templateUrl: './trips.component.html',
   styleUrl: './trips.component.css',
 })

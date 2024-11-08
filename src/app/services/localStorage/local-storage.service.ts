@@ -13,17 +13,14 @@ export class LocalStorageService {
 
   getItem(key: string): Viagem[] {
     const dataString = localStorage.getItem(key);
-    console.log(dataString);
-
     const data = dataString ? JSON.parse(dataString) : [];
-    console.log(data);
-
     return data.map((item: any) => {
       return new Viagem(
         item.viagem,
         new Date(item.inicio),
         new Date(item.fim),
-        item.criadoPor
+        item.criadoPor,
+        item.email
       );
     });
   }
