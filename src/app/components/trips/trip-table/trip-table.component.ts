@@ -17,13 +17,14 @@ export class TripTableComponent {
 
   verificaStatus(ini: Date, fim: Date, estaCancelada: boolean): string {
     const hoje = new Date();
+
     if (estaCancelada) {
       return 'Cancelada';
     }
-    if (hoje < ini) {
+    if (hoje < new Date(ini)) {
       return 'Planejada';
     }
-    if (hoje > fim) {
+    if (hoje > new Date(fim)) {
       return 'Concluída';
     }
     return 'Em andamento';
