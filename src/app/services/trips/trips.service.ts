@@ -1,6 +1,5 @@
 import { Participante, Viagem } from '../../interfaces/trips';
 import { inject, Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { LocalStorageService } from '../localStorage/local-storage.service';
 
 @Injectable({
@@ -29,8 +28,8 @@ export class TripsService {
     return this.tripsData;
   }
 
-  getParticipants(): Observable<Participante[]> {
-    return of(this.participantsData);
+  getParticipants(): Participante[] {
+    return this.participantsData;
   }
 
   setTrip(trip: Viagem): void {
