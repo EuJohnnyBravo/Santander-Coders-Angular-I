@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
 })
 export class TripTableComponent {
   table: string[] = ['Viagem', 'inicio', 'fim', 'status', 'criado por', 'ação'];
-  @Input() tripsData: Observable<Viagem[]> = new Observable<Viagem[]>();
+  @Input() tripsData: Viagem[] = [];
 
   verificaStatus(ini: Date, fim: Date, estaCancelada: boolean): string {
     const hoje = new Date();
