@@ -1,8 +1,5 @@
-
-import { Injectable } from '@angular/core';
 import { Participante, Viagem } from '../../interfaces/trips';
 import { inject, Injectable } from '@angular/core';
-import { Viagem } from '../../interfaces/trips';
 import { Observable, of } from 'rxjs';
 import { LocalStorageService } from '../localStorage/local-storage.service';
 
@@ -23,7 +20,7 @@ export class TripsService {
     new Participante('Kauan Herbst', 'kauan@gmail.com'),
     new Participante('Herbst Kauan', 'herbst@gmail.com'),
     new Participante('Kauan Herbst', 'kauan@gmail.com'),
-    new Participante('Herbst Kauan', 'herbst@gmail.com')
+    new Participante('Herbst Kauan', 'herbst@gmail.com'),
   ];
 
   constructor() {}
@@ -35,7 +32,7 @@ export class TripsService {
   getParticipants(): Observable<Participante[]> {
     return of(this.participantsData);
   }
-  
+
   setTrip(trip: Viagem): void {
     this.tripsData.push(trip);
   }
