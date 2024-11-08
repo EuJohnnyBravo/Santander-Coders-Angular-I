@@ -40,4 +40,8 @@ export class TripsService {
   setLocalStorage(): void {
     this.localStorageS.setItem('trips', JSON.stringify(this.tripsData));
   }
+
+  getTripById(id: string){
+    return this.tripsData.find((travel) => travel.id === id);
+  }
 }

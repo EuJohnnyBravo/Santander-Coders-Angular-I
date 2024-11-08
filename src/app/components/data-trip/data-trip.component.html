@@ -8,16 +8,10 @@
         <div>
           <h2 class="text-2xl font-semibold text-zinc-50">Id</h2>
           <span class="text-lg text-zinc-500"
-            >9b6814b6-5947-46ac-8af7-c9d630055b9f</span
+            >{{trip.id}}</span
           >
         </div>
-        <a
-          href=""
-          class="flex flex-row items-center bg-gradient-to-tl gap-1 from-teal-400 to-teal-300 py-[2px] px-4 rounded-full"
-        >
-          <img src="../../../assets/edit.svg" />
-          <p>Editar Viagem</p>
-        </a>
+      <app-button label="Editar Viagem" src="../../../assets/edit.svg" route="/edit/{{trip.id}}" ></app-button>
       </div>
       <div
         class="flex gap-32 mx-12 my-12 border-y-2 border-zinc-800 p-8">
@@ -25,28 +19,28 @@
           <div>
             <div class="flex flex-col gap-2">
               <p class="text-lg">Destino:</p>
-              <p class="text-lg text-zinc-500">Rio de Janeiro</p>
+              <p class="text-lg text-zinc-500">{{trip.viagem}}</p>
             </div>
           </div>
           <div>
             <div class="flex gap-48 mt-16">
               <div class="flex flex-col gap-2">
                 <p class="text-lg">Criado Por:</p>
-                <p class="text-lg text-zinc-500">Kauan Herbst</p>
+                <p class="text-lg text-zinc-500">{{trip.criadoPor}}</p>
               </div>
               <div class="flex flex-col gap-2">
                 <p class="text-lg">Email:</p>
-                <p class="text-lg text-zinc-500">kauangmail.com</p>
+                <p class="text-lg text-zinc-500">{{trip.email}}</p>
               </div>
             </div>
             <div class="flex gap-48 mt-16">
               <div class="flex flex-col gap-2">
                 <p class="text-lg">Data de Início:</p>
-                <p class="text-lg text-zinc-500">03/06/2024</p>
+                <p class="text-lg text-zinc-500">{{trip.inicio | date : "dd/MM/yyyy"}}</p>
               </div>
               <div class="flex flex-col gap-2">
                 <p class="text-lg">Data do Fim:</p>
-                <p class="text-lg text-zinc-500">03/06/2024</p>
+                <p class="text-lg text-zinc-500">{{trip.fim | date : "dd/MM/yyyy"}}</p>
               </div>
             </div>
           </div>
@@ -55,7 +49,7 @@
           <div class="border-b-2 border-zinc-800 p-2">
             <span class="text-lg">Participantes:</span>
           </div>
-          <app-data-part-table [participantsData]="participantsDataMock"></app-data-part-table>
+          <app-data-part-table [participantsData]="trip.participantes"></app-data-part-table>
         </div>
       </div>
       <div class="flex items-center gap-5 mx-12 my-12 justify-end">
