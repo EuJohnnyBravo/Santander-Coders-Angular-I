@@ -18,7 +18,7 @@ export const routes: Routes = [
     redirectTo: '',
   },
   {
-    path: 'info',
+    path: 'info/:id',
     component: DataTripComponent,
   },
   {
