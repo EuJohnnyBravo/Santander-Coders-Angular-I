@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { TripsComponent } from './components/trips/trips.component';
 import { DataTripComponent } from './components/data-trip/data-trip.component';
 import { NewTripComponent } from './components/new-trip/new-trip.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    component: NotFoundComponent,
   },
 ];
