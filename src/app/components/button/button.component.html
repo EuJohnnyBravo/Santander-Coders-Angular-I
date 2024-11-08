@@ -1,0 +1,7 @@
+<button
+  [routerLink]="route ? [route] : null"
+  class="flex flex-row items-center bg-gradient-to-tl from-teal-400 to-teal-300 py-[2px] px-4 rounded-full"
+>
+  <img [src]="src" class="w-4 h-4" />
+  <p class="text-teal-950 font-roboto font-medium text-sm">{{ label }}</p>
+</button>

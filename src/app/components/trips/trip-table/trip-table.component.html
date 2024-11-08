@@ -30,18 +30,27 @@
           </p>
         </td>
         <td class="header-table">
-          <p
-            class="text-center font-medium text-sm font-roboto rounded-full"
-            [ngClass]="{
-              'bg-teal-950 text-teal-400':
-              verificaStatus(trip.inicio, trip.fim, trip.estaCancelada) === 'Planejada',
-              'bg-red-950 text-red-300': verificaStatus(trip.inicio, trip.fim, trip.estaCancelada) === 'Cancelada',
-              'bg-yellow-950 text-yellow-400': verificaStatus(trip.inicio, trip.fim, trip.estaCancelada) === 'Em andamento',
-              'bg-green-950 text-green-400': verificaStatus(trip.inicio, trip.fim, trip.estaCancelada) === 'Concluída',
-            }"
+          <ng-container
+            *ngIf="
+              verificaStatus(
+                trip.inicio,
+                trip.fim,
+                trip.estaCancelada
+              ) as status
+            "
           >
-            {{ verificaStatus(trip.inicio, trip.fim, trip.estaCancelada) }}
-          </p>
+            <p
+              class="text-center font-medium text-sm font-roboto rounded-full"
+              [ngClass]="{
+                'bg-teal-950 text-teal-400': status === 'Planejada',
+                'bg-red-950 text-red-300': status === 'Cancelada',
+                'bg-yellow-950 text-yellow-400': status === 'Em andamento',
+                'bg-green-950 text-green-400': status === 'Concluída',
+              }"
+            >
+              {{ status }}
+            </p>
+          </ng-container>
         </td>
         <td class="header-table">
           <p class="text-table text-zinc-200">

@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export class Viagem {
   participantes: Participante[] = [];
   estaCancelada: boolean = false;
@@ -7,10 +9,11 @@ export class Viagem {
     public inicio: Date,
     public fim: Date,
     public criadoPor: string,
-    private _id: number = Date.now()
+    public email: string,
+    private _id: string = uuidv4()
   ) {}
 
-  get id(): number {
+  get id(): string {
     return this._id;
   }
 }
