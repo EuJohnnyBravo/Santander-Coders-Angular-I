@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export class Viagem {
   participantes: Participante[] = [];
-  estaCancelada: boolean = false;
+
 
   constructor(
     public viagem: string,
@@ -10,7 +10,8 @@ export class Viagem {
     public fim: Date,
     public criadoPor: string,
     public email: string,
-    private _id: string = uuidv4()
+    private _id: string = uuidv4(),
+    public estaCancelada: boolean = false
   ) {}
 
   get id(): string {

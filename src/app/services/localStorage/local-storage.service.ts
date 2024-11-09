@@ -20,7 +20,9 @@ export class LocalStorageService {
         new Date(item.inicio),
         new Date(item.fim),
         item.criadoPor,
-        item.email
+        item.email,
+        item._id,
+        item.estaCancelada
       );
     });
   }

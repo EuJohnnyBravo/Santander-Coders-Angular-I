@@ -5,21 +5,31 @@ import { TripsService } from '../../services/trips/trips.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
+import { CancelTripComponent } from "./cancel-trip/cancel-trip.component";
 
 @Component({
   selector: 'app-data-trip',
   standalone: true,
-  imports: [DataPartTableComponent, ButtonComponent, CommonModule],
+  imports: [DataPartTableComponent, ButtonComponent, CommonModule, CancelTripComponent],
   templateUrl: './data-trip.component.html',
   styleUrl: './data-trip.component.css',
 })
 export class DataTripComponent implements OnInit {
   trip!: Viagem;
+  isModalOpen = false;
 
   constructor(
     private tripsService: TripsService,
     private router: ActivatedRoute
   ) {}
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
 
   ngOnInit(): void {
     this.trip = this.tripsService.getTripById(
