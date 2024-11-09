@@ -1,0 +1,93 @@
+<div>
+  <div class="flex flex-row items-center gap-4 h-24 my-6">
+    <h1 class="text-2xl font-roboto font-medium text-zinc-50">Editar Viagem</h1>
+    <app-button
+      label="Voltar para Informações"
+      src="../../../assets/arrow-left.svg"
+      route="/info/{{ trip.id }}"
+    ></app-button>
+  </div>
+  <div class="border-y-2 border-zinc-800">
+    <div class="flex items-center gap-5 mx-12 my-5">
+      <div>
+        <h2 class="text-xl font-semibold text-zinc-50">Edição Viagem</h2>
+        <span class="text-lg text-zinc-500">Edite uma viagem existente</span>
+      </div>
+    </div>
+    <div class="flex flex-row p-2 border-y-2 border-zinc-800 gap-5 mx-12 my-5">
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        class="flex flex-col gap-1 w-1/3"
+      >
+        <app-form-input
+          [control]="destino"
+          label="Destino:"
+          type="text"
+          name="destino"
+        />
+        <app-form-input
+          [control]="nome"
+          label="Nome:"
+          type="text"
+          name="nome"
+        />
+        <app-form-input
+          [control]="email"
+          label="Email:"
+          type="text"
+          name="email"
+        />
+        <app-form-input
+          [control]="inicio"
+          label="Data de Inicio:"
+          type="date"
+          name="inicio"
+        />
+        <app-form-input
+          [control]="fim"
+          label="Data de Fim:"
+          type="date"
+          name="fim"
+        />
+        <app-button label="Salvar" src="../../../assets/send.svg" />
+      </form>
+      <div class="">
+        <div>
+          <h2 class="text-xl font-semibold text-zinc-50">
+            Adicionar Participante
+          </h2>
+          <span class="text-lg text-zinc-500"
+            >Adicione participantes para a viagem</span
+          >
+        </div>
+        <form
+          [formGroup]="formParticipantes"
+          (ngSubmit)="onSubmitParticipante()"
+        >
+          <div class="flex flex-row w-full items-center">
+            <app-form-input
+              [control]="nomeParticipante"
+              label="Nome:"
+              type="text"
+              name="nome"
+            />
+            <app-form-input
+              [control]="emailParticipante"
+              label="Email:"
+              type="text"
+              name="email"
+            />
+            <app-button label="Adicionar" src="../../../assets/plus.svg" />
+          </div>
+        </form>
+        <div>
+          <h3 class="text-lg font-semibold text-zinc-50">Participante</h3>
+          <app-participants-table
+            [participantsData]="trip.participante"
+          ></app-participants-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

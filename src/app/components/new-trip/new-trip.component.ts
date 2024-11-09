@@ -16,7 +16,6 @@ import { Viagem } from '../../interfaces/trips';
   selector: 'app-new-trip',
   standalone: true,
   imports: [
-    RouterLink,
     FormInputComponent,
     ButtonComponent,
     ReactiveFormsModule,

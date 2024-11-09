@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataPartTableComponent } from './data-part-table/data-part-table.component';
 import { Viagem } from '../../interfaces/trips';
 import { TripsService } from '../../services/trips/trips.service';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { CancelTripComponent } from "./cancel-trip/cancel-trip.component";

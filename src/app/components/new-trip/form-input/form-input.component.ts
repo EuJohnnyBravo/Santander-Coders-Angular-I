@@ -28,4 +28,8 @@ export class FormInputComponent {
     }
     return '';
   }
+
+  get isValid(): boolean {
+    return this.control.invalid && this.control.touched;
+  }
 }

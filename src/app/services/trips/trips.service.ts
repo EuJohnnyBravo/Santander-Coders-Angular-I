@@ -57,4 +57,13 @@ export class TripsService {
       return trip.viagem.toLowerCase().includes(searchValue.toLowerCase());
     });
   }
+
+  removeParticipant(id: string): void {
+    this.tripsData.filter((trip: Viagem) => {
+      trip.participante = trip.participante.filter((participant) => {
+        return participant.id !== id;
+      });
+    });
+    this.setLocalStorage();
+  }
 }

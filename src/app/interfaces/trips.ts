@@ -1,8 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export class Viagem {
-  participantes: Participante[] = [];
-
 
   constructor(
     public viagem: string,
@@ -10,8 +8,9 @@ export class Viagem {
     public fim: Date,
     public criadoPor: string,
     public email: string,
-    private _id: string = uuidv4(),
-    public estaCancelada: boolean = false
+    public estaCancelada: boolean = false,
+    public participante: Participante[] = [],
+    private _id: string = uuidv4()
   ) {}
 
   get id(): string {
@@ -20,10 +19,16 @@ export class Viagem {
 }
 
 export class Participante {
+  private _id: string = uuidv4();
   nome: string;
   email: string;
   constructor(nome: string, email: string) {
     this.nome = nome;
     this.email = email;
+    this._id = uuidv4();
+  }
+
+  get id(): string {
+    return this._id;
   }
 }

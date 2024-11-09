@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Viagem } from '../../interfaces/trips';
+import { Participante, Viagem } from '../../interfaces/trips';
 
 @Injectable({
   providedIn: 'root',
@@ -21,8 +21,11 @@ export class LocalStorageService {
         new Date(item.fim),
         item.criadoPor,
         item.email,
-        item._id,
-        item.estaCancelada
+        item.estaCancelada,
+        item.participante.map((participante: Participante) => {
+          return new Participante(participante.nome, participante.email);
+        }),
+        item._id
       );
     });
   }
