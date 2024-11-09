@@ -12,7 +12,8 @@
     [class]="classList"
     class="border-[1px] w-4/5 text-zinc-400 font-roboto border-zinc-800 rounded-lg p-[1px] bg-zinc-900"
   />
-  <div *ngIf="control.invalid && control.touched" class="text-red-500 text-sm">
+  <div *ngIf="isValid" class="text-red-500 text-sm">
     {{ errorMessage }}
   </div>
+  <div *ngIf="!isValid" class="h-5"></div>
 </div>

@@ -3,6 +3,7 @@ import { TripsComponent } from './components/trips/trips.component';
 import { DataTripComponent } from './components/data-trip/data-trip.component';
 import { NewTripComponent } from './components/new-trip/new-trip.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { EditTripComponent } from './components/edit-trip/edit-trip.component';
 
 export const routes: Routes = [
   {
@@ -15,7 +16,7 @@ export const routes: Routes = [
   },
   {
     path: 'edit/:id',
-    redirectTo: '',
+    component: EditTripComponent,
   },
   {
     path: 'info/:id',

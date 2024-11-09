@@ -1,0 +1,32 @@
+<div class="border-[1px] border-zinc-800 max-h-[32vh] overflow-y-auto scroll">
+  <table class="min-w-full divide-y divide-zinc-950 h-[45%]">
+    <thead class="bg-zinc-950 sticky top-0 z-10">
+      <tr
+        class="font-roboto text-base text-center font-normal text-zinc-50 tracking-wider"
+      >
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <div class="bg-zinc-700 h-[1px] w-full"></div>
+    <tbody>
+      <tr *ngFor="let participant of participantsData">
+        <td class="header-table">
+          <p class="text-table text-zinc-400">{{ participant.nome }}</p>
+        </td>
+        <td class="header-table">
+          <p class="text-table text-zinc-400">{{ participant.email }}</p>
+        </td>
+        <td class="header-table">
+          <button
+            class="bg-red-400 m-1 p-1 rounded-md"
+            (click)="removeParticipante(participant.id)"
+          >
+            <img src="../../../assets/trash.svg" alt="delete" />
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
