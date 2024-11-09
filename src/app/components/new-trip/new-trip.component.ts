@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { FormInputComponent } from './form-input/form-input.component';
+import { FormInputComponent } from '../trip-forms/form-input/form-input.component';
 import { ButtonComponent } from '../button/button.component';
 import {
   FormControl,
@@ -11,6 +11,7 @@ import {
 import { NgIf } from '@angular/common';
 import { TripsService } from '../../services/trips/trips.service';
 import { Viagem } from '../../interfaces/trips';
+import { TripFormsComponent } from '../trip-forms/trip-forms.component';
 
 @Component({
   selector: 'app-new-trip',
@@ -21,6 +22,7 @@ import { Viagem } from '../../interfaces/trips';
     ReactiveFormsModule,
     FormInputComponent,
     NgIf,
+    TripFormsComponent,
   ],
   templateUrl: './new-trip.component.html',
   styleUrl: './new-trip.component.css',

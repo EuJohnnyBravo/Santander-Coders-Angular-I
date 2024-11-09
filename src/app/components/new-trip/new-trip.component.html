@@ -19,47 +19,7 @@
           Insira os dados abaixo para adicionar uma nova Viagem
         </p>
       </div>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="grid grid-cols-3 py-20 border-y-2 border-zinc-800">
-          <app-form-input
-            [control]="destino"
-            label="Destino:"
-            type="text"
-            name="destino"
-          />
-          <app-form-input
-            [control]="nome"
-            label="Nome:"
-            type="text"
-            name="nome"
-          />
-          <app-form-input
-            [control]="email"
-            label="Email:"
-            type="text"
-            name="email"
-          />
-          <app-form-input
-            [control]="inicio"
-            label="Data de Inicio:"
-            type="date"
-            name="inicio"
-          />
-          <app-form-input
-            [control]="fim"
-            label="Data de Fim:"
-            type="date"
-            name="fim"
-          />
-        </div>
-        <div class="flex flex-row justify-end mt-4 mb-10 ">
-          <p *ngIf="formMsg">{{ formMsg }}</p>
-          <app-button
-            label="Salvar Viagem"
-            src="../../../assets/send.svg"
-          ></app-button>
-        </div>
-      </form>
+      <app-trip-forms [grid]="true"></app-trip-forms>
     </div>
   </div>
 </div>

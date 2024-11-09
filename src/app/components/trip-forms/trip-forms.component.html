@@ -1,0 +1,54 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div
+    class="gap-2"
+    [ngClass]="{
+      'grid grid-cols-3 py-20 border-y-2 border-zinc-800 items-center': grid,
+      'flex flex-col items-start': flex
+    }"
+  >
+    <app-form-input
+      [control]="destino"
+      label="Destino:"
+      type="text"
+      name="destino"
+      class="w-4/5"
+    />
+    <app-form-input
+      [control]="nome"
+      label="Nome:"
+      type="text"
+      name="nome"
+      class="w-4/5"
+    />
+    <app-form-input
+      [control]="email"
+      label="Email:"
+      type="text"
+      name="email"
+      class="w-4/5"
+    />
+    <app-form-input
+      [control]="inicio"
+      label="Data de Inicio:"
+      type="date"
+      name="inicio"
+      class="w-4/5"
+    />
+    <app-form-input
+      [control]="fim"
+      label="Data de Fim:"
+      type="date"
+      name="fim"
+      class="w-4/5"
+    />
+    <app-button
+      label="Salvar Viagem"
+      src="../../../assets/send.svg"
+      class="w-4/5"
+    ></app-button>
+  </div>
+  <div *ngIf="form.hasError('dateRangeInvalid')" class="text-red-500 text-sm">
+    A data de término não pode ser menor que a data de início.
+  </div>
+  <div *ngIf="!form.hasError('dateRangeInvalid')" class="h-5"></div>
+</form>

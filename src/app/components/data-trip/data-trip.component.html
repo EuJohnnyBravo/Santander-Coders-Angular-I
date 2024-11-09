@@ -1,4 +1,9 @@
-<app-cancel-trip class="fixed inset-0 flex justify-center items-center z-30" [tripId]="trip.id" *ngIf="isModalOpen" (close)="closeModal()"></app-cancel-trip>
+<app-cancel-trip
+  class="fixed inset-0 flex justify-center items-center z-30"
+  [tripId]="trip.id"
+  *ngIf="isModalOpen"
+  (close)="closeModal()"
+></app-cancel-trip>
 <div class="font-roboto">
   <div class="flex flex-row items-center gap-5 h-24 my-6">
     <h1 class="text-2xl font-medium text-zinc-50">Dados Viagem</h1>
@@ -72,4 +77,3 @@
     </div>
   </div>
 </div>
-
