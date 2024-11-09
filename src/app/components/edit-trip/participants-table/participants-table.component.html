@@ -1,4 +1,4 @@
-<div class="border-[1px] border-zinc-800 max-h-[32vh] overflow-y-auto scroll">
+<div class="border-[1px] border-zinc-800 h-[32vh] overflow-y-auto scroll">
   <table class="min-w-full divide-y divide-zinc-950 h-[45%]">
     <thead class="bg-zinc-950 sticky top-0 z-10">
       <tr
@@ -19,12 +19,14 @@
           <p class="text-table text-zinc-400">{{ participant.email }}</p>
         </td>
         <td class="header-table">
-          <button
-            class="bg-red-400 m-1 p-1 rounded-md"
-            (click)="removeParticipante(participant.id)"
-          >
-            <img src="../../../assets/trash.svg" alt="delete" />
-          </button>
+          <div class="flex justify-center items-center">
+            <button
+              class="bg-red-400 m-1 p-1 rounded-md justify-center"
+              (click)="removeParticipante(participant.id)"
+            >
+              <img src="../../../assets/trash.svg" alt="delete" />
+            </button>
+          </div>
         </td>
       </tr>
     </tbody>

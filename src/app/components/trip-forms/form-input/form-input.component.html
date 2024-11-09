@@ -1,4 +1,4 @@
-<div class="flex flex-col my-4">
+<div class="flex flex-col">
   <label
     [for]="name"
     class="text-base font-roboto font-normal text-zinc-50 my-[1px]"
@@ -10,7 +10,7 @@
     [name]="name"
     [id]="name"
     [class]="classList"
-    class="border-[1px] w-4/5 text-zinc-400 font-roboto border-zinc-800 rounded-lg p-[1px] bg-zinc-900"
+    class="border-[1px] text-zinc-400 font-roboto border-zinc-800 rounded-lg p-[1px] bg-zinc-900"
   />
   <div *ngIf="isValid" class="text-red-500 text-sm">
     {{ errorMessage }}

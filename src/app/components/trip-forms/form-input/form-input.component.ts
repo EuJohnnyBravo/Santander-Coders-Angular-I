@@ -15,6 +15,7 @@ export class FormInputComponent {
   @Input() name: string = '';
   @Input() classList: string = '';
   @Input() control!: FormControl;
+  @Input() lock: boolean = false;
 
   get errorMessage(): string {
     if (this.control.errors) {
