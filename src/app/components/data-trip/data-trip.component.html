@@ -1,3 +1,4 @@
+<app-cancel-trip class="fixed inset-0 flex justify-center items-center z-30" [tripId]="trip.id" *ngIf="isModalOpen" (close)="closeModal()"></app-cancel-trip>
 <div class="font-roboto">
   <div class="flex flex-row items-center gap-5 h-24 my-6">
     <h1 class="text-2xl font-medium text-zinc-50">Dados Viagem</h1>
@@ -62,6 +63,7 @@
       <div class="flex items-center gap-5 mx-12 my-12 justify-end">
         <button
           class="flex flex-row items-center gap-1 bg-red-400 text-red-950 py-[2px] px-4 rounded-full"
+          (click)="openModal()"
         >
           <img src="../../../assets/cancel.svg" />
           <p>Cancelar Viagem</p>
@@ -70,3 +72,4 @@
     </div>
   </div>
 </div>
+

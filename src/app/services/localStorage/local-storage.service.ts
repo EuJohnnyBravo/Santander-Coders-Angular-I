@@ -21,6 +21,7 @@ export class LocalStorageService {
         new Date(item.fim),
         item.criadoPor,
         item.email,
+        item.estaCancelada,
         item.participante.map((participante: Participante) => {
           return new Participante(participante.nome, participante.email);
         }),
