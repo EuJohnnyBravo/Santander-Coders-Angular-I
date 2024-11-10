@@ -1,9 +1,17 @@
-<app-cancel-trip
+<app-modal
   class="fixed inset-0 flex justify-center items-center z-30"
-  [tripId]="trip.id"
-  *ngIf="isModalOpen"
+  [trip]="trip"
+  *ngIf="isModalCancelOpen"
+  [type]="'cancel'"
   (close)="closeModal()"
-></app-cancel-trip>
+></app-modal>
+<app-modal
+  class="fixed inset-0 flex justify-center items-center z-30"
+  [trip]="trip"
+  [type]="'delete'"
+  *ngIf="isModalDeleteOpen"
+  (close)="closeModal()"
+></app-modal>
 <div class="font-roboto">
   <div class="flex flex-row items-center gap-5 h-24 my-6">
     <h1 class="text-2xl font-medium text-zinc-50">Dados Viagem</h1>
@@ -65,14 +73,32 @@
           ></app-data-part-table>
         </div>
       </div>
-      <div class="flex items-center gap-5 mx-12 my-12 justify-end">
+      <div class="flex items-center gap-5 mx-12 my-12 justify-between">
         <button
           class="flex flex-row items-center gap-1 bg-red-400 text-red-950 py-[2px] px-4 rounded-full"
-          (click)="openModal()"
+          (click)="openModalDelete()"
         >
           <img src="../../../assets/cancel.svg" />
-          <p>Cancelar Viagem</p>
+          <p>Apagar Viagem</p>
         </button>
+        <div>
+          <button
+            class="flex flex-row items-center gap-1 bg-red-400 text-red-950 py-[2px] px-4 rounded-full"
+            (click)="openModalCancel()"
+            *ngIf="!trip.estaCancelada"
+          >
+            <img src="../../../assets/cancel.svg" />
+            <p>Cancelar Viagem</p>
+          </button>
+          <button
+            class="flex flex-row items-center gap-1 bg-teal-400 text-teal-950 py-[2px] px-4 rounded-full"
+            (click)="openModalCancel()"
+            *ngIf="trip.estaCancelada"
+          >
+            <img src="../../../assets/send.svg" />
+            <p>Reativar Viagem</p>
+          </button>
+        </div>
       </div>
     </div>
   </div>

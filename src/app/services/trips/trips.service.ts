@@ -44,8 +44,13 @@ export class TripsService {
     return this.tripsData.find((travel) => travel.id === id);
   }
 
-  cancelTrip(id: string){
-    this.getTripById(id)!.estaCancelada = true;
+  cancelTrip(id: string) {
+    this.getTripById(id)!.estaCancelada = !this.getTripById(id)!.estaCancelada;
+    this.setLocalStorage();
+  }
+
+  deleteTrip(id: string) {
+    this.tripsData = this.tripsData.filter((trip) => trip.id !== id);
     this.setLocalStorage();
   }
 
