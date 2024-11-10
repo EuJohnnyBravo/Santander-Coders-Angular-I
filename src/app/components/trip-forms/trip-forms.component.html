@@ -1,3 +1,9 @@
+<app-modal
+  class="fixed inset-0 flex justify-center items-center z-30"
+  *ngIf="isModalOpen"
+  [type]="'alert'"
+  (close)="closeModal()"
+></app-modal>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div
     class="gap-2"
@@ -45,6 +51,7 @@
       label="Salvar Viagem"
       src="../../../assets/send.svg"
       class="w-4/5"
+      (click)="openModal()"
     ></app-button>
   </div>
   <div *ngIf="form.hasError('dateRangeInvalid')" class="text-red-500 text-sm">

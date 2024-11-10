@@ -1,5 +1,5 @@
-import { Component, inject, Input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormInputComponent } from '../trip-forms/form-input/form-input.component';
 import { ButtonComponent } from '../button/button.component';
 import {
@@ -12,6 +12,7 @@ import { NgIf } from '@angular/common';
 import { TripsService } from '../../services/trips/trips.service';
 import { Viagem } from '../../interfaces/trips';
 import { TripFormsComponent } from '../trip-forms/trip-forms.component';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-new-trip',
@@ -23,6 +24,7 @@ import { TripFormsComponent } from '../trip-forms/trip-forms.component';
     FormInputComponent,
     NgIf,
     TripFormsComponent,
+    ModalComponent,
   ],
   templateUrl: './new-trip.component.html',
   styleUrl: './new-trip.component.css',
@@ -60,7 +62,6 @@ export class NewTripComponent {
       const newTrip = new Viagem(destino, inicio, fim, nome, email);
       this.tripServise.tripsData.push(newTrip);
       this.tripServise.setLocalStorage();
-      alert('Viagem cadastrada com sucesso!');
       this.router.navigate(['/']);
     } else {
       this.formMsg = 'Form is invalid';

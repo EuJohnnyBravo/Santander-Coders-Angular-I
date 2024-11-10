@@ -12,6 +12,7 @@ import { Viagem } from '../../interfaces/trips';
 import { Router } from '@angular/router';
 import { TripsService } from '../../services/trips/trips.service';
 import { ButtonComponent } from '../button/button.component';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-trip-forms',
@@ -22,6 +23,7 @@ import { ButtonComponent } from '../button/button.component';
     ReactiveFormsModule,
     NgClass,
     NgIf,
+    ModalComponent,
   ],
   templateUrl: './trip-forms.component.html',
   styleUrl: './trip-forms.component.css',
@@ -29,6 +31,7 @@ import { ButtonComponent } from '../button/button.component';
 export class TripFormsComponent {
   form: FormGroup;
   tripService = inject(TripsService);
+  isModalOpen = false;
 
   @Input() lock: boolean = false;
   @Input() flex: boolean = false;
@@ -59,6 +62,15 @@ export class TripFormsComponent {
     );
   }
 
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+    this.router.navigate(['/']);
+  }
+
   dateRangeValidator(
     group: AbstractControl
   ): { [key: string]: boolean } | null {
@@ -84,16 +96,13 @@ export class TripFormsComponent {
       this.trip.inicio = new Date(inicio);
       this.trip.fim = new Date(fim);
       this.tripService.setLocalStorage();
-      alert('Viagem atualizada com sucesso!');
-      this.router.navigate(['/']);
+      this.openModal();
     } else {
       if (this.form.valid) {
         const { destino, nome, email, inicio, fim } = this.form.value;
         const newTrip = new Viagem(destino, inicio, fim, nome, email);
         this.tripService.tripsData.push(newTrip);
         this.tripService.setLocalStorage();
-        alert('Viagem cadastrada com sucesso!');
-        this.router.navigate(['/']);
       }
     }
   }
