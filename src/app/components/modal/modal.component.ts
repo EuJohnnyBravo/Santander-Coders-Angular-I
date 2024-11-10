@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TripsService } from '../../services/trips/trips.service';
 import { Viagem } from '../../interfaces/trips';
 import { NgIf } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -31,5 +31,9 @@ export class ModalComponent {
 
   closeModal() {
     this.close.emit();
+  }
+
+  isNull() {
+    return this.trip.id === null;
   }
 }
