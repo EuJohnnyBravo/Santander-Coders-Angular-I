@@ -8,14 +8,7 @@ import { StatusComponent } from '../../status/status.component';
 @Component({
   selector: 'app-trip-table',
   standalone: true,
-  imports: [
-    CommonModule,
-    NgFor,
-    NgIf,
-    RouterLink,
-    StatusComponent,
-    StatusComponent,
-  ],
+  imports: [CommonModule, NgFor, RouterLink, StatusComponent],
   templateUrl: './trip-table.component.html',
   styleUrl: './trip-table.component.css',
 })

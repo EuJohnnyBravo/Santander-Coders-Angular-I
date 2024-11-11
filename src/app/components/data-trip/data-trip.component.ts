@@ -49,19 +49,4 @@ export class DataTripComponent implements OnInit {
       this.router.snapshot.params['id']
     )!;
   }
-
-  verificaStatus(ini: Date, fim: Date, estaCancelada: boolean): string {
-    const hoje = new Date();
-
-    if (estaCancelada) {
-      return 'Cancelada';
-    }
-    if (hoje < new Date(ini)) {
-      return 'Planejada';
-    }
-    if (hoje > new Date(fim)) {
-      return 'Concluída';
-    }
-    return 'Em andamento';
-  }
 }
