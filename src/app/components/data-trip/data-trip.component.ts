@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../modal/modal.component';
+import { StatusComponent } from '../status/status.component';
 
 @Component({
   selector: 'app-data-trip',
@@ -15,6 +16,7 @@ import { ModalComponent } from '../modal/modal.component';
     ButtonComponent,
     CommonModule,
     ModalComponent,
+    StatusComponent,
   ],
   templateUrl: './data-trip.component.html',
   styleUrl: './data-trip.component.css',

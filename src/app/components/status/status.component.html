@@ -1,0 +1,15 @@
+<ng-container
+  *ngIf="verificaStatus(trip.inicio, trip.fim, trip.estaCancelada) as status"
+>
+  <p
+    class="text-center font-medium text-sm font-roboto rounded-full"
+    [ngClass]="{
+      'bg-teal-950 text-teal-400': status === 'Planejada',
+      'bg-yellow-950 text-yellow-400': status === 'Em andamento',
+      'bg-green-950 text-green-400': status === 'Concluída',
+      'bg-red-950 text-red-300': status === 'Cancelada',
+    }"
+  >
+    {{ status }}
+  </p>
+</ng-container>
